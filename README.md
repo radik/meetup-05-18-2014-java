@@ -1,0 +1,1 @@
+Presentation & Demo for my talk on [http://www.meetup.com/devday/events/162778712/](DevDay Kazan 05-18-2014)
