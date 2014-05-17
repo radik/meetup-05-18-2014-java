@@ -131,6 +131,160 @@
                     <img src="images/python-web-service.png" alt="">
                 </section>
 
+                <section>
+                    <img src="images/trollface.jpg" alt="">
+                    <blockquote align="left">
+                        - What is pip?<br>
+                        - It's a python package manager. <br>
+                        You can install it with easy_install. <br>
+                        - What is easy_install? <br>
+                        - It's a python package manager... <br>
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h2>Почему Java?</h2>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Java 8 - ну наконец-то!</h2>
+                    <h3>Lambda Expressions</h3>
+                    <pre><code>
+    () -> System.out.println(this)
+    (String str) -> System.out.println(str)
+    str -> System.out.println(str)
+    (String s1, String s2) -> { return s2.length() - s1.length(); }
+    (s1, s2) -> s2.length() - s1.length()
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>Java 8 - Lambda Expressions</h3>
+                    <pre><code>
+  Arrays.sort(strArray, (String s1, String s2) -> s2.length() - s1.length());
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Java 8 - Method references</h3>
+                    <pre><code>
+    public class FileFilters {
+       public static boolean fileIsPdf(File file) {/*code*/}
+       public static boolean fileIsTxt(File file) {/*code*/}
+       public static boolean fileIsRtf(File file) {/*code*/}
+    }
+                    </code></pre>
+                    <pre><code>
+    Stream &lt;File&gt; pdfs = getFiles().filter(FileFilters::fileIsPdf);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Java 8 - Functional Interfaces</h3>
+                    <ul>
+                        <li>Function&lt;T,R&gt;</li>
+                        <li>Supplier&lt;T&gt;</li>
+                        <li>Predicate&lt;T&gt;</li>
+                    </ul>
+                    <pre><code>
+    Function&lt;String, String&gt; atr = (name) -> {return "@" + name;};
+                    </code></pre>
+                </section>
+
+                <section>
+                    <img src="images/not-bad-medvedev.png" alt="">
+                </section>
+
+                <section>
+                    <h3>Java 8 - Default Methods</h3>
+                    <pre><code>
+    interface Foo {
+        default void talk() {
+            out.println("Foo!");
+        }
+    }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Java 8 - Streams</h3>
+                    <ul>
+                        <li><code>stream()</code></li>
+                        <li><code>parallelStream()</code></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Java 8 - Streams</h3>
+                    <pre><code>
+    Stream.generate(() -> Math.random());
+                    </code></pre>
+                    <pre><code>
+    Stream.iterate(1, i -> i+1).forEach(System.out::print);
+                    </code></pre>
+                    <pre><code>
+    IntStream.range(1, 11).forEach(System.out::println);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Java 8 - Streams - ForEach</h3>
+                    <pre><code>
+    Files.list(Paths.get(".")).forEach(System.out::println);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Java 8 - Map/Filter/Reduce</h3>
+                    <pre><code>
+    PlayerPoints highestPlayer = 
+       names.stream().map(name -> new PlayerPoints(name, getPoints(name)))
+           .reduce(new PlayerPoints("", 0.0), 
+               (s1, s2) -> (s1.points > s2.points) ? s1 : s2);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Java 8 - Streams - а кроме того...</h3>
+                    <ul>
+                        <li>Peek</li>
+                        <li>Limit</li>
+                        <li>Sort</li>
+                        <li>Collectors and Statistics</li>
+                        <li>Grouping and Partitioning</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>И все это concurrent из коробки!</h1>
+                </section>
+
+                <section>
+                    <img src="images/not-bad-sherlok.jpg" alt="">
+                </section>
+
+                <section>
+                    <h3>Java 8 - Optional</h3>
+                    Tony Hoare: "Null References: The Billion Dollar Mistake"
+                </section>
+
+                <section>
+                    <h2>Спасибо за внимание!</h2>
+                </section>
+
+                <section>
+                    <h3>Ссылки</h3>
+                    <ul>
+                        <li><a href="https://leanpub.com/whatsnewinjava8/read">https://leanpub.com/whatsnewinjava8/read</a></li>
+                        <li><a href="http://java.oracle.com">http://java.oracle.com</a></li>
+                        <li><a href="http://github.com/radik/meetup-05-18-2014-java">http://github.com/radik/meetup-05-18-2014-java</a></li>
+                    </ul>
+                </section>
             </div>
 
         </div>
