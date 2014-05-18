@@ -69,7 +69,15 @@
 
                 <section>
                     <h2>На самом деле</h2>
-                    <h2>Demo</h2>
+<pre><code>
+    class ReadFile8 {
+    	public static void main(String[] args) throws IOException {
+    		try (Stream st = Files.lines(Paths.get("file_utf8.txt"))) {
+         		st.forEach(System.out::println);
+     		}
+    	}
+    }
+</code></pre>
                 </section>
 
                 <section>
